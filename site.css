@@ -1,1 +1,30 @@
+/*reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
 
+/*barre de navigation*/
+
+.logo {
+  width: 5vw;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(251, 204, 143);
+}
+
+.navlist {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navlist li {
+  padding: 1vw 3vh;
+}
