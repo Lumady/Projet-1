@@ -5,29 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="site.css" />
-    <title>crêpes salées sucrées</title>
+    <title>recettes crêpes salées sucrées</title>
   </head>
 
   <body>
     <header>
+      <img src="photos/logo.svg" class="logo" alt="logo" />
       <nav class="navbar">
-        <img src="photos/logo.png" class="logo" alt="logo" />
         <ul class="navlist">
           <li><a href="acceuil.html">Acceuil</a></li>
           <li><a href="salees.html">Crêpes Salées</a></li>
           <li><a href="sucrees.html">Crêpes Sucrées</a></li>
           <li><a href="idees.html">Idées de Présentation</a></li>
         </ul>
+        <div class="burger">
+          <span></span>
+        </div>
       </nav>
-      <div class="burger">
-        <span></span>
-      </div>
-      <script src="site.js"></script>
     </header>
 
-    <h1>Titre du site</h1>
+    <div class="title">
+      <h1>La crêpes dans tout ses états</h1>
+    </div>
 
-    <div class="history">
+    <section class="history">
       <h2>À la découverte des Crêpes...</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sed ex
@@ -37,14 +38,15 @@
         distinctio velit doloremque natus praesentium nihil at, nam vitae?
         Libero a rerum perferendis?
       </p>
-    </div>
+    </section>
 
-    <div>
+    <section class="pictures">
       <img src="" class="salt" alt="photo de crêpes salées" />
       <img src="" class="candy" alt="photo de crêpes sucrées" />
       <img src="" class="idea" alt="photo de présentation de crêpes" />
-    </div>
+    </section>
 
     <footer>Copyright by moi</footer>
+    <script src="site.js"></script>
   </body>
 </html>

@@ -5,35 +5,43 @@
   padding: 0;
   text-decoration: none;
   list-style-type: none;
+  outline: none;
 }
 
 /*barre de navigation*/
 
 .logo {
-  width: 5vw;
-  height: auto;
+  width: 50px;
+  height: 36px;
 }
 
-.navbar {
+header {
   display: flex;
   justify-content: space-between;
   background-color: rgb(251, 204, 143);
 }
+.navbar {
+  background-color: rgb(251, 204, 143);
+  height: 36px;
+}
 
 .navlist {
   display: flex;
-  justify-content: flex-end;
-}
-
-.navlist li {
-  padding: 1vw 3vh;
+  flex-direction: column;
+  background-color: red;
+  position: fixed;
+  right: 0;
+  top: 36px;
+  height: 100vh;
+  width: 50vw;
+  /* display: none; */
 }
 
 /*menu burger*/
 
 .burger {
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 36px;
   cursor: pointer;
   position: relative;
   background-color: black;
@@ -70,14 +78,58 @@
   transform: translateY(-9px);
 }
 
+.burger.active .navlist {
+  display: block;
+}
+
 .burger.active span {
   background-color: transparent;
 }
 
 .burger.active span::before {
-  transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(35deg);
 }
 
 .burger.active span::after {
-  transform: translateY(0px) rotateZ(-45deg);
+  transform: translateY(0px) rotateZ(-35deg);
+}
+
+/*body*/
+
+h1 {
+  text-align: center;
+  padding: 30px 10px;
+  background-color: blue;
+}
+
+.history {
+  padding: 30px 10px;
+  background-color: blueviolet;
+}
+
+.pictures {
+  background-color: aqua;
+}
+footer {
+  background-color: chartreuse;
+}
+/*format desktop : >480px*/
+
+@media screen and (min-width: 480px) {
+  .burger {
+    display: none;
+  }
+
+  .navlist {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: static;
+    width: calc(100vw - 50px);
+    height: 36px;
+  }
+
+  .navlist li {
+    padding: 0px 15px;
+  }
 }
