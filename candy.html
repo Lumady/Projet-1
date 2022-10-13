@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>recettes crêpes salées sucrées</title>
   </head>
 
@@ -13,18 +13,21 @@
       <img src="photos/logo.svg" class="logo" alt="logo" />
       <nav class="navbar">
         <ul class="navlist">
-          <li><a href="acceuil.html">Acceuil</a></li>
-          <li><a href="salees.html">Crêpes Salées</a></li>
-          <li><a href="sucrees.html">Crêpes Sucrées</a></li>
-          <li><a href="idees.html">Idées de Présentation</a></li>
+          <li class="welcome-nav"><a href="index.html">Acceuil</a></li>
+          <li class="salt-nav"><a href="salt.html">Crêpes Salées</a></li>
+          <li class="candy-nav"><a href="candy.html">Crêpes Sucrées</a></li>
+          <li class="ideas-nav">
+            <a href="ideas.html">Idées de Présentation</a>
+          </li>
         </ul>
         <div class="burger">
           <span></span>
         </div>
       </nav>
     </header>
-
-    <h1>Les Crêpes Sucrées</h1>
+    <div class="salt-crepe">
+      <h1>Les Crêpes Sucrées</h1>
+    </div>
 
     <h2>Recettes</h2>
 
@@ -42,41 +45,39 @@
 
     <section class="steps">
       <h3>Réalisation</h3>
-      <ul>
-        <ol>
+      <ol>
+        <li>
           Etape 1 : Verser la farine dans un saladier et y ajouter les
           différents sucres, puis mélanger avec un fouet.
-        </ol>
-        <ol>
-          Etape 2 : Faire un puit et y verser les oeufs au milieu.
-        </ol>
-        <ol>
+        </li>
+        <li>Etape 2 : Faire un puit et y verser les oeufs au milieu.</li>
+        <li>
           Etape 3 : Commencer à mélanger doucement avec un fouet jusqu'à
           l'obtention d'une pâte épaisse et lisse.
-        </ol>
-        <ol>
+        </li>
+        <li>
           Etape 4 : Ajouter 100 ml de lait et mélanger jusqu'à ce que le lait
           soit bien incorporé et que le mélange soit homogène. Recommencer cette
           étape jusqu'à épuisement du lait.
-        </ol>
-        <ol>
+        </li>
+        <li>
           Etape 5 : Ajouter le beurre fondu refroidi et bien mélanger. La pâte
           doit être assez fluide. Si elle parait trop épaisse, rajouter un peu
           de lait et mélanger.
-        </ol>
-        <ol>
+        </li>
+        <li>
           Etape 6 : Beurrer ou huiler la crépière. Lorsqu'elle est bien chaude,
           verser une louche de pâte au centre de la crépière et étaler la pâte.
           Dès que les bords de la crêpe se décollent et se colorent en roux
           clair, là retourner à l'aide d'une spatule à crêpes (aussi appelé
           spanel) et laisser cuire une minute environ.<br />
           Répéter jusqu'à épuisement de la pâte.
-        </ol>
-        <ol>
+        </li>
+        <li>
           C'est prêt!!! Il ne reste plus qu'à garnir vos crêpes selon vos
           envies!
-        </ol>
-      </ul>
+        </li>
+      </ol>
     </section>
 
     <section class="variants">
@@ -96,5 +97,8 @@
       </p>
       <p>Bon appétit!!!</p>
     </section>
+
+    <footer class="footer">Copyright by moi</footer>
+    <script src="site.js"></script>
   </body>
 </html>

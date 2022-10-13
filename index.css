@@ -1,0 +1,300 @@
+/*reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+}
+
+/*font-face*/
+@font-face {
+  font-family: "AlegreyaSans";
+  src: url("font/AlegreyaSans-Regular.ttf");
+}
+
+/*body*/
+body {
+  font-family: "AlegreyaSans", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+.footer {
+  background-color: rgb(251, 204, 143);
+  width: 100%;
+  position: sticky;
+  top: 100vh;
+}
+
+/*logo*/
+
+.logo {
+  width: 70px;
+  height: 36px;
+}
+
+/*barre de navigation*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(251, 204, 143);
+}
+.navbar {
+  background-color: rgb(251, 204, 143);
+  height: 36px;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  position: absolute;
+  right: 0vw;
+  top: 36px;
+  width: 0vw;
+  transition: right 0.8s ease-in-out;
+}
+
+.navlist li {
+  /*display: none;*/
+  transform: translateX(100%);
+  padding: 20px 5px;
+  color: rgb(251, 204, 143);
+}
+
+a:-webkit-any-link {
+  color: rgb(251, 204, 143);
+}
+
+.nav-active li:first-child {
+  padding-top: 40px;
+}
+
+.nav-active li:last-child {
+  padding-bottom: 40px;
+}
+
+.nav-active .navlist {
+  right: 0;
+  z-index: 2;
+  width: 50vw;
+}
+.nav-active li {
+  /*display: initial;*/
+  transform: translateX(0);
+}
+.nav-active .welcome-nav {
+  transition: all 1.3s ease-in-out;
+}
+
+.nav-active .salt-nav {
+  transition: all 1.4s ease-in-out;
+}
+
+.nav-active .candy-nav {
+  transition: all 1.5s ease-in-out;
+}
+
+.nav-active .ideas-nav {
+  transition: all 1.6s ease-in-out;
+}
+
+/*menu burger*/
+
+.burger {
+  width: 60px;
+  height: 36px;
+  cursor: pointer;
+  position: relative;
+  background-color: black;
+}
+
+.burger span {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(251, 204, 143);
+  display: block;
+  position: absolute;
+  top: 50%;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 100%;
+  background-color: rgb(251, 204, 143);
+  transition: transform 0.8s ease-in-out;
+}
+
+.burger span::before {
+  transform: translateY(9px);
+}
+
+.burger span::after {
+  transform: translateY(-9px);
+}
+
+.burger.active .navlist {
+  display: block;
+}
+
+.burger.active span {
+  background-color: transparent;
+}
+
+.burger.active span::before {
+  transform: translateY(0px) rotateZ(150deg);
+}
+
+.burger.active span::after {
+  transform: translateY(0px) rotateZ(-150deg);
+}
+
+/*page acceuil*/
+
+.img {
+  padding: 15vh 0px;
+  background: url("photos/fondh1.png") no-repeat;
+  background-size: cover;
+}
+
+.title {
+  position: relative;
+  color: white;
+}
+
+.titleh1 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+}
+
+h2 {
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.history {
+  padding: 10px 10px;
+  background-color: rgb(251, 204, 143);
+}
+
+.pictures {
+  background-color: rgb(251, 204, 143);
+}
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.button {
+  background-color: black;
+  border: 1px rgb(251, 204, 143), solid;
+  color: rgb(251, 204, 143);
+  padding: 10px 10%;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+/*body salées et sucrées*/
+
+.ingredients {
+  background-color: goldenrod;
+}
+
+.steps {
+  background-color: deeppink;
+}
+
+.solution {
+  background-color: salmon;
+}
+
+.variants {
+  background-color: aquamarine;
+}
+
+/*page candy*/
+
+.salt-crepe {
+  background: url("photos/candy1.jpg") no-repeat;
+  background-size: cover;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*format desktop : >480px*/
+
+@media screen and (min-width: 480px) {
+  .burger {
+    display: none;
+  }
+
+  .navlist {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: static;
+    width: calc(100vw - 70px);
+    height: 36px;
+  }
+
+  .navlist li {
+    padding: 0px 27px;
+    transform: none;
+  }
+
+  .nav-active .welcome-nav {
+    transition: none;
+  }
+
+  .nav-active .salt-nav {
+    transition: none;
+  }
+
+  .nav-active .candy-nav {
+    transition: none;
+  }
+
+  .nav-active .ideas-nav {
+    transition: none;
+  }
+}
