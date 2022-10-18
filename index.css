@@ -26,11 +26,36 @@ h3 {
   font-weight: bold;
 }
 
+h1 {
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+  border-radius: 20%;
+}
+
 .footer {
   background-color: rgb(251, 204, 143);
   width: 100%;
   position: sticky;
   top: 100vh;
+  padding: 10px;
+  text-align: center;
+}
+
+h2 {
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+p {
+  font-size: 1rem;
+  padding: 10px;
 }
 
 /*logo*/
@@ -60,13 +85,14 @@ header {
   right: 0vw;
   top: 36px;
   width: 0vw;
-  transition: right 0.8s ease-in-out;
+  overflow: hidden;
+  /*transition: right 0.8s ease-in-out;*/
 }
 
 .navlist li {
   /*display: none;*/
   transform: translateX(100%);
-  padding: 20px 5px;
+  padding: 20px 10px;
   color: rgb(251, 204, 143);
 }
 
@@ -86,9 +112,11 @@ a:-webkit-any-link {
   right: 0;
   z-index: 2;
   width: 50vw;
+  height: 290px;
+  transition: all 0.5s ease-in-out;
 }
 .nav-active li {
-  /*display: initial;*/
+  /*: block;*/
   transform: translateX(0);
 }
 .nav-active .welcome-nav {
@@ -167,7 +195,7 @@ a:-webkit-any-link {
 /*page acceuil*/
 
 .img {
-  padding: 15vh 0px;
+  padding: 17vh 0px;
   background: url("photos/fondh1.png") no-repeat;
   background-size: cover;
 }
@@ -186,17 +214,6 @@ a:-webkit-any-link {
   font-size: 2.5rem;
 }
 
-h2 {
-  padding: 20px 20px;
-  text-align: center;
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1rem;
-  padding: 10px;
-}
-
 .history {
   padding: 10px 10px;
   background-color: rgb(251, 204, 143);
@@ -211,7 +228,7 @@ p {
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -229,41 +246,94 @@ p {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -10%);
+  transform: translate(-50%, -30%);
 }
 
 /*body salées et sucrées*/
 
+.recette {
+  background-color: black;
+  color: rgb(251, 204, 143);
+}
+
 .ingredients {
-  background-color: goldenrod;
+  background-color: rgb(251, 204, 143);
+  padding: 24px 20px;
+}
+
+.ingredients ul {
+  padding: 7px 20px;
+}
+
+.ingredients li {
+  list-style-type: circle;
 }
 
 .steps {
-  background-color: deeppink;
+  background-color: rgb(251, 204, 143);
+  padding: 20px;
+  border-top: dashed 2px black;
+}
+
+.steps li {
+  padding: 7px;
+}
+
+.ingredients li {
+  padding: 4px;
 }
 
 .solution {
-  background-color: salmon;
+  background-color: rgb(251, 204, 143);
+  padding: 7px 30px;
 }
 
 .variants {
-  background-color: aquamarine;
+  background-color: black;
+  color: rgb(251, 204, 143);
+  padding: 20px;
 }
 
-/*page candy*/
+.card2 img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
 
+.card2 {
+  background-color: rgb(251, 204, 143);
+  position: relative;
+}
+
+/*page salt*/
 .salt-crepe {
-  background: url("photos/candy1.jpg") no-repeat;
+  background: url("photos/salt-title1.jpg") no-repeat;
   background-size: cover;
+  background-position: 15% 85%;
   height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/*format desktop : >480px*/
+.solution li {
+  list-style-type: disc;
+}
 
-@media screen and (min-width: 480px) {
+/*page candy*/
+.candy-crepe {
+  background: url("photos/candy-title1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*format desktop : >590px*/
+
+@media screen and (min-width: 590px) {
   .burger {
     display: none;
   }
@@ -275,6 +345,7 @@ p {
     position: static;
     width: calc(100vw - 70px);
     height: 36px;
+    overflow: none;
   }
 
   .navlist li {
@@ -296,5 +367,16 @@ p {
 
   .nav-active .ideas-nav {
     transition: none;
+  }
+
+  .card {
+    width: 33%;
+    margin: 0px 5px;
+  }
+
+  .pictures {
+    position: relative;
+    display: flex;
+    flex-direction: row;
   }
 }
