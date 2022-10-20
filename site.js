@@ -6,3 +6,4 @@ function menuFirstMobil() {
     navbar.classList.toggle("nav-active");
   });
 }
+menuFirstMobil();

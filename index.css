@@ -71,6 +71,7 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: rgb(251, 204, 143);
+  height: 36px;
 }
 .navbar {
   background-color: rgb(251, 204, 143);
@@ -90,7 +91,6 @@ header {
 }
 
 .navlist li {
-  /*display: none;*/
   transform: translateX(100%);
   padding: 20px 10px;
   color: rgb(251, 204, 143);
@@ -115,10 +115,11 @@ a:-webkit-any-link {
   height: 290px;
   transition: all 0.5s ease-in-out;
 }
+
 .nav-active li {
-  /*: block;*/
   transform: translateX(0);
 }
+
 .nav-active .welcome-nav {
   transition: all 1.3s ease-in-out;
 }
@@ -212,6 +213,7 @@ a:-webkit-any-link {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2.5rem;
+  padding: 0.7rem;
 }
 
 .history {
@@ -224,12 +226,14 @@ a:-webkit-any-link {
 }
 .card {
   position: relative;
+  padding-bottom: 10px;
 }
 
 .card img {
   width: 100%;
   height: 350px;
   object-fit: cover;
+  display: block;
 }
 
 .button {
@@ -275,6 +279,11 @@ a:-webkit-any-link {
   border-top: dashed 2px black;
 }
 
+.italic {
+  font-style: italic;
+  text-decoration: underline;
+}
+
 .steps li {
   padding: 7px;
 }
@@ -307,7 +316,7 @@ a:-webkit-any-link {
 
 /*page salt*/
 .salt-crepe {
-  background: url("photos/salt-title1.jpg") no-repeat;
+  background: url("photos/galette1.jpg") no-repeat;
   background-size: cover;
   background-position: 15% 85%;
   height: 20vh;
@@ -322,7 +331,7 @@ a:-webkit-any-link {
 
 /*page candy*/
 .candy-crepe {
-  background: url("photos/candy-title1.jpg") no-repeat;
+  background: url("photos/crepe-roule-choco1.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   height: 20vh;
@@ -331,9 +340,29 @@ a:-webkit-any-link {
   align-items: center;
 }
 
+/*page ideas*/
+
+.carrousel {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-carrousel {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  padding: 30px;
+}
+
+.card-carrousel img {
+  width: 100px;
+  object-fit: cover;
+}
+
 /*format desktop : >590px*/
 
 @media screen and (min-width: 590px) {
+  /*navigation*/
   .burger {
     display: none;
   }
@@ -369,6 +398,8 @@ a:-webkit-any-link {
     transition: none;
   }
 
+  /*page d'acceuil*/
+
   .card {
     width: 33%;
     margin: 0px 5px;
@@ -376,6 +407,45 @@ a:-webkit-any-link {
 
   .pictures {
     position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /*crêpes salées et sucrées*/
+
+  .container {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .ingredients {
+    grid-column-start: 1;
+  }
+
+  .steps {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .variants {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .card2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    padding: 10px 0px;
+  }
+
+  .button {
+    display: none;
+  }
+
+  /*page ideas*/
+
+  .carrousel {
     display: flex;
     flex-direction: row;
   }
