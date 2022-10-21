@@ -7,6 +7,18 @@ function carrousel() {
     "photos/crepe-citron1.jpg",
     "photos/crepe-couleur1.jpg",
     "photos/crepe-choco1.jpg",
+    "photos/sucree1.jpg",
+    "photos/fruits-rouges1.jpg",
+    "photos/galette1.jpg",
+    "photos/crepe-roule-choco1.jpg",
+    "photos/crepe-fromage1.jpg",
+    "photos/crepe-fourre1.jpg",
+    "photos/crepe-apero1.jpg",
+    "photos/crepe-choco-chantilly1.jpg",
+    "photos/gateau-crepe1.jpg",
+    "photos/dessert1.jpg",
+    "photos/crepe-dessert1.jpg",
+    "photos/crepe-jambon1.jpg",
   ];
 
   const left = document.querySelector("#left");
@@ -16,7 +28,7 @@ function carrousel() {
   const photo2 = document.querySelector(".cadrePhoto2");
   const photo3 = document.querySelector(".cadrePhoto3");
 
-  right.addEventListener("click", function () {
+  left.addEventListener("click", function () {
     photo1.src = photo2.src;
     photo1.dataset.url = photo2.dataset.url;
     photo2.src = photo3.src;
@@ -29,7 +41,7 @@ function carrousel() {
     photo3.dataset.url = photos[indexPD3];
   });
 
-  left.addEventListener("click", function () {
+  right.addEventListener("click", function () {
     photo3.src = photo2.src;
     photo3.dataset.url = photo2.dataset.url;
     photo2.src = photo1.src;
