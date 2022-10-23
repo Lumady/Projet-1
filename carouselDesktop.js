@@ -1,12 +1,12 @@
 function carrousel() {
   const photos = [
+    "photos/crepe-couleur1.jpg",
+    "photos/apero1.jpg",
+    "photos/crepe-choco1.jpg",
     "photos/crepe-rose1.jpg",
     "photos/crepe-salade1.jpg",
     "photos/crepe-orange1.jpg",
-    "photos/apero1.jpg",
     "photos/crepe-citron1.jpg",
-    "photos/crepe-couleur1.jpg",
-    "photos/crepe-choco1.jpg",
     "photos/sucree1.jpg",
     "photos/fruits-rouges1.jpg",
     "photos/galette1.jpg",
