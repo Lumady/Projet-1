@@ -1,0 +1,636 @@
+/*reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+}
+
+/*root*/
+:root {
+  --main-color: rgb(251, 204, 143);
+  --secondary-color: black;
+  --title-color: white;
+}
+
+/*font-face*/
+@font-face {
+  font-family: "AlegreyaSans";
+  src: url("font/AlegreyaSans-Regular.ttf");
+}
+
+/*body*/
+body {
+  font-family: "AlegreyaSans", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  color: var(--title-color);
+  background-color: var(--secondary-color);
+  opacity: 0.7;
+  border-radius: 100%;
+  padding: 1rem;
+}
+
+.footer {
+  background-color: var(--main-color);
+  width: 100%;
+  position: sticky;
+  top: 100vh;
+  padding: 10px;
+  text-align: center;
+}
+
+h2 {
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+p {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+/*logo*/
+
+.logo {
+  width: 70px;
+  height: 36px;
+}
+
+/*barre de navigation*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  height: 36px;
+  z-index: 8;
+}
+.navbar {
+  background-color: var(--main-color);
+  height: 36px;
+  z-index: 2;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  position: absolute;
+  right: 0vw;
+  top: 36px;
+  width: 0vw;
+  overflow: hidden;
+  /*transition: right 0.8s ease-in-out;*/
+}
+
+.navlist li {
+  transform: translateX(100%);
+  padding: 20px 10px;
+  color: var(--main-color);
+}
+
+a:-webkit-any-link {
+  color: var(--main-color);
+}
+
+.nav-active li:first-child {
+  padding-top: 40px;
+}
+
+.nav-active li:last-child {
+  padding-bottom: 40px;
+}
+
+.nav-active .navlist {
+  right: 0;
+  z-index: 3;
+  width: 50vw;
+  height: 290px;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-active li {
+  transform: translateX(0);
+}
+
+.nav-active .welcome-nav {
+  transition: all 1.3s ease-in-out;
+}
+
+.nav-active .salt-nav {
+  transition: all 1.4s ease-in-out;
+}
+
+.nav-active .candy-nav {
+  transition: all 1.5s ease-in-out;
+}
+
+.nav-active .ideas-nav {
+  transition: all 1.6s ease-in-out;
+}
+
+/*menu burger*/
+
+.burger {
+  width: 80px;
+  height: 36px;
+  padding: 0 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--secondary-color);
+}
+
+.burger span {
+  width: 70px;
+  height: 3px;
+  background-color: var(--main-color);
+  display: block;
+  position: absolute;
+  top: 50%;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 100%;
+  background-color: var(--main-color);
+  transition: transform 0.8s ease-in-out;
+}
+
+.burger span::before {
+  transform: translateY(9px);
+}
+
+.burger span::after {
+  transform: translateY(-9px);
+}
+
+.burger.active .navlist {
+  display: block;
+}
+
+.burger.active span {
+  background-color: transparent;
+}
+
+.burger.active span::before {
+  transform: translateY(0px) rotateZ(160deg);
+}
+
+.burger.active span::after {
+  transform: translateY(0px) rotateZ(-160deg);
+}
+
+/*page acceuil*/
+
+.img {
+  padding: 17vh 0px;
+  background: url("photos/fondh1.png");
+  background-size: cover;
+}
+
+.title {
+  position: relative;
+}
+
+.titleh1 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+}
+
+.history {
+  padding: 10px 10px;
+  background-color: var(--main-color);
+}
+
+.pictures {
+  background-color: var(--main-color);
+}
+.card {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.button {
+  background-color: var(--secondary-color);
+  border: 1px var(--main-color) solid;
+  color: var(--main-color);
+  padding: 10px 10%;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+/*body salées et sucrées*/
+
+.recette {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+}
+
+.ingredients {
+  background-color: var(--main-color);
+  padding: 24px 20px;
+}
+
+.ingredients ul {
+  padding: 7px 20px;
+}
+
+.ingredients li {
+  list-style-type: circle;
+}
+
+.steps {
+  background-color: var(--main-color);
+  padding: 20px;
+  border-top: dashed 2px var(--secondary-color);
+}
+
+.italic {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.steps li {
+  padding: 7px;
+}
+
+.ingredients li {
+  padding: 4px;
+}
+
+.solution {
+  background-color: var(--main-color);
+  padding: 7px 30px;
+}
+
+.variants {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  padding: 20px;
+}
+
+.card2 img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+.card2 {
+  background-color: var(--main-color);
+  position: relative;
+}
+
+/*page salt*/
+.salt-crepe {
+  background: url("photos/galette1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 15% 85%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solution li {
+  list-style-type: disc;
+}
+
+/*page candy*/
+.candy-crepe {
+  background: url("photos/crepe-roule-choco1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*page ideas*/
+
+/*.presentation-ideas {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}*/
+
+.presentation-ideas {
+  position: relative;
+}
+
+.h1-ideas {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, +20%);
+  font-size: 2rem;
+}
+
+.back {
+  background: url("photos/fondh1.png");
+  background-size: cover;
+  opacity: 0.5;
+  width: 100vw;
+  height: calc(100vh - 36px - 39px);
+  z-index: -1;
+  position: relative;
+}
+
+.carrousel {
+  position: absolute;
+  top: 36px;
+  display: flex;
+  justify-content: space-between;
+  /* display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: repeat(3, calc(100vh - 36px));*/
+  align-items: center;
+  height: calc(100vh - 36px - 39px);
+  width: 100%;
+}
+
+#left {
+  /* grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 4;*/
+  font-size: 2rem;
+  /* padding-left: 25%;*/
+  cursor: pointer;
+}
+
+#right {
+  /*grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;*/
+  font-size: 2rem;
+  /* padding-left: 25%;*/
+  cursor: pointer;
+}
+
+.c1 {
+  display: none;
+  /* grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;*/
+}
+
+/*.c2 {
+   grid-column-start: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}*/
+
+.c2 img {
+  transition: all 1s ease-in-out;
+}
+
+.c2 img:active {
+  transform: scale(1.5);
+}
+
+.c3 {
+  display: none;
+  /* grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;*/
+}
+
+.card-carrousel {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-carrousel img {
+  width: 100%;
+  height: 450px;
+  padding: 10px;
+  object-fit: cover;
+}
+
+/*format desktop : >590px*/
+
+@media screen and (min-width: 590px) {
+  /*navigation*/
+  .burger {
+    display: none;
+  }
+
+  .navlist {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: static;
+    width: calc(100vw - 70px);
+    height: 36px;
+  }
+
+  .navlist li {
+    padding: 0px 27px;
+    transform: none;
+  }
+
+  .nav-active .welcome-nav {
+    transition: none;
+  }
+
+  .nav-active .salt-nav {
+    transition: none;
+  }
+
+  .nav-active .candy-nav {
+    transition: none;
+  }
+
+  .nav-active .ideas-nav {
+    transition: none;
+  }
+
+  /*page d'acceuil*/
+
+  .card {
+    width: 33%;
+    margin: 0px 5px;
+  }
+
+  .pictures {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /*crêpes salées et sucrées*/
+
+  .container {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .ingredients {
+    grid-column-start: 1;
+  }
+
+  .steps {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .variants {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .card2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    padding: 10px 0px;
+  }
+
+  .card2 img {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    object-fit: cover;
+  }
+
+  .button {
+    display: none;
+  }
+
+  /*page ideas*/
+
+  .carrousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* height: calc(100vh -56px -30px);
+    /* grid-template-columns: 15% repeat(3, auto) 15%;
+    grid-template-rows: auto*/
+  }
+
+  .card-carrousel img {
+    width: 100%;
+    height: 450px;
+    padding: 10px;
+    object-fit: cover;
+  }
+
+  .card-carrousel {
+    width: 33%;
+    padding: 0;
+  }
+
+  .c1 {
+    display: block;
+  }
+
+  .c2 img:hover {
+    transform: scale(1.4);
+  }
+
+  .c3 {
+    display: block;
+  }
+}
+
+/*format intermédiaire : <590px et >800px*/
+
+@media screen and (min-width: 590px) and (max-width: 800px) {
+  /*page ideas*/
+
+  .carrousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-carrousel {
+    width: 50%;
+    padding: 0;
+  }
+
+  .card-carrousel img {
+    width: 100%;
+    height: 350px;
+    padding: 10px;
+    object-fit: cover;
+  }
+
+  .c1 {
+    display: block;
+  }
+
+  .c2 {
+    display: none;
+  }
+
+  .c3 {
+    display: block;
+  }
+}
+
+/*écran de moins de 750px de hauteur*/
+@media screen and (max-height: 750px) {
+  .presentation-ideas {
+    display: none;
+  }
+}
+
+/*écran de moins de 520px de hauteur*/
+@media screen and (max-height: 520px) {
+  .card-carrousel img {
+    width: 100%;
+    max-height: 200px;
+    padding: 10px;
+    object-fit: cover;
+  }
+}
